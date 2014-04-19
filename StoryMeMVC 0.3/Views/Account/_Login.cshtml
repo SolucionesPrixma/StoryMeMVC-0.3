@@ -1,0 +1,28 @@
+﻿@model StoryMeMVC.Models.LoginModel
+<h2 class="font-thin">Ingresa</h2>
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+    <div class="form-group">
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Correo Electronico" })
+        @Html.ValidationMessageFor(m => m.UserName)
+    </div>
+    <br />
+    <br />
+    <div class="form-group">
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Contraseña" })
+        @Html.ValidationMessageFor(m => m.Password)
+    </div>
+    <br /> <br />
+    <input type="submit" class="btn btn-primary" value="A Cuentar..." />
+
+
+}
+
+<section class="social" id="socialLoginForm">
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>

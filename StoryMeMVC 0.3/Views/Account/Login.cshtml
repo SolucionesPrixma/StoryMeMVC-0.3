@@ -1,0 +1,29 @@
+﻿@model StoryMeMVC.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+<div class="slide story" id="slide-9">
+        <div class="container">
+            <div class="row content-row">
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+                <div class="col-12 col-sm-5">
+                    <p><i class="icon icon-bolt"></i></p>
+                    @{
+                        Html.RenderPartial("_Register");
+                    }
+                </div><!-- /col12 -->
+                <div class="col-12 col-sm-5">
+                    <div class="thin_vertical_line" style="position:absolute;left:-1px;height:100%;top:0px;"></div>
+                    <p><i class="icon icon-cog"></i></p>
+                    @{
+                        Html.RenderPartial("_Login");
+                    }
+                </div><!-- /col12 -->
+                <div class="col-sm-1 hidden-sm">&nbsp;</div>
+            </div><!-- /row -->
+        </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
